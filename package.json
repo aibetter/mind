@@ -1,25 +1,40 @@
 {
   "name": "mind",
-  "private": true,
-  "version": "0.1.0",
   "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.13.1+sha512.37ebf1a5c7a30d5fabe0c5df44ee8da4c965ca0c5af3dbab28c3a1681b70a256218d05c81c9c0dcf767ef6b8551eb5b960042b9ed4300c59242336377e01cfad",
+  "description": "A desktop application focused on empowering the future with AI.",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
-    "tauri": "tauri"
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "format:rust": "cd src-tauri && cargo fmt",
+    "tauri": "tauri",
+    "prepare": "husky"
   },
   "dependencies": {
-    "vue": "^3.5.13",
     "@tauri-apps/api": "^2",
-    "@tauri-apps/plugin-opener": "^2"
+    "@tauri-apps/plugin-opener": "^2",
+    "vue": "^3.5.13"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^4.17.0",
+    "@tauri-apps/cli": "^2",
+    "@types/node": "22",
     "@vitejs/plugin-vue": "^5.2.1",
+    "eslint": "^9.31.0",
+    "eslint-plugin-format": "^1.0.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.2",
     "typescript": "~5.6.2",
     "vite": "^6.0.3",
-    "vue-tsc": "^2.1.10",
-    "@tauri-apps/cli": "^2"
+    "vue-tsc": "^2.1.10"
   },
-  "packageManager": "pnpm@10.13.1+sha512.37ebf1a5c7a30d5fabe0c5df44ee8da4c965ca0c5af3dbab28c3a1681b70a256218d05c81c9c0dcf767ef6b8551eb5b960042b9ed4300c59242336377e01cfad"
+  "lint-staged": {
+    "*": "pnpm lint:fix",
+    "src-tauri/src/**/*.rs": "cd src-tauri && cargo fmt"
+  }
 }

@@ -4,6 +4,7 @@
     "rust-lang.rust-analyzer",
     "streetsidesoftware.code-spell-checker",
     "ms-vscode.vscode-typescript-next",
-    "vue.volar"
+    "vue.volar",
+    "dbaeumer.vscode-eslint"
   ]
 }
