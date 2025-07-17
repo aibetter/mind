@@ -1,7 +1,7 @@
 [project]
-name = "src-python"
-version = "0.1.0"
-description = "Add your description here"
+name = "mind-python"
+version = "0.0.0"
+description = "A desktop application focused on empowering the future with AI."
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = []

@@ -3,6 +3,6 @@ revision = 2
 requires-python = ">=3.13"
 
 [[package]]
-name = "src-python"
-version = "0.1.0"
+name = "mind-python"
+version = "0.0.0"
 source = { virtual = "." }
