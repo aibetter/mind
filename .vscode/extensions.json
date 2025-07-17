@@ -6,6 +6,7 @@
     "ms-vscode.vscode-typescript-next",
     "vue.volar",
     "dbaeumer.vscode-eslint",
-    "ms-python.black-formatter"
+    "ms-python.black-formatter",
+    "bradlc.vscode-tailwindcss"
   ]
 }
