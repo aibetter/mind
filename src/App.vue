@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { invoke } from '@tauri-apps/api/core'
+import { callFunction } from 'tauri-plugin-python-api'
 import { ref } from 'vue'
 
 const greetMsg = ref('')
@@ -8,6 +9,10 @@ const name = ref('')
 async function greet() {
   // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
   greetMsg.value = await invoke('greet', { name: name.value })
+}
+
+async function greetPython() {
+  callFunction('main', [])
 }
 </script>
 
@@ -32,6 +37,9 @@ async function greet() {
       <input id="greet-input" v-model="name" placeholder="Enter a name...">
       <button type="submit">
         Greet
+      </button>
+      <button @click="greetPython">
+        Python
       </button>
     </form>
     <p>{{ greetMsg }}</p>
