@@ -17,6 +17,9 @@ importers:
       '@tauri-apps/plugin-opener':
         specifier: ^2
         version: 2.4.0
+      '@tauri-apps/plugin-shell':
+        specifier: ~2.3.0
+        version: 2.3.0
       '@tauri-apps/plugin-store':
         specifier: ~2.3.0
         version: 2.3.0
@@ -26,9 +29,6 @@ importers:
       ohash:
         specifier: ^2.0.11
         version: 2.0.11
-      tauri-plugin-python-api:
-        specifier: ^0.3.4
-        version: 0.3.4
       vue:
         specifier: ^3.5.13
         version: 3.5.17(typescript@5.6.3)
@@ -78,6 +78,9 @@ importers:
       vue-tsc:
         specifier: ^2.1.10
         version: 2.2.12(typescript@5.6.3)
+      zx:
+        specifier: ^8.7.1
+        version: 8.7.1
 
 packages:
 
@@ -751,6 +754,9 @@ packages:
 
   '@tauri-apps/plugin-opener@2.4.0':
     resolution: {integrity: sha512-43VyN8JJtvKWJY72WI/KNZszTpDpzHULFxQs0CJBIYUdCRowQ6Q1feWTDb979N7nldqSuDOaBupZ6wz2nvuWwQ==}
+
+  '@tauri-apps/plugin-shell@2.3.0':
+    resolution: {integrity: sha512-6GIRxO2z64uxPX4CCTuhQzefvCC0ew7HjdBhMALiGw74vFBDY95VWueAHOHgNOMV4UOUAFupyidN9YulTe5xlA==}
 
   '@tauri-apps/plugin-store@2.3.0':
     resolution: {integrity: sha512-mre8er0nXPhyEWQzWCpUd+UnEoBQYcoA5JYlwpwOV9wcxKqlXTGfminpKsE37ic8NUb2BIZqf0QQ9/U3ib2+/A==}
@@ -2095,9 +2101,6 @@ packages:
     resolution: {integrity: sha512-5S7Va8hKfV7W5U6g3aYxXmlPoZVAwUMy9AOKyF2fVuZa2UD3qZjg578OrLRt8PcNN1PleVaL/5/yYATNL0ICUw==}
     engines: {node: '>=18'}
 
-  tauri-plugin-python-api@0.3.4:
-    resolution: {integrity: sha512-WRawN6X1H/ALAvbZlKgjUiyjrMTYYlZXEo6ngEcGPaKjTBR5cqBVZXCC2KT4OL90Z6+g2oEw6mqBpQPw5fwOKw==}
-
   tinyexec@1.0.1:
     resolution: {integrity: sha512-5uC6DDlmeqiOwCPmK9jMSdOuZTh8bU39Ys6yidB+UTt5hfZUPGAypSgFRiEp+jbi9qH40BLDvy85jIU88wKSqw==}
 
@@ -2265,6 +2268,11 @@ packages:
 
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
+
+  zx@8.7.1:
+    resolution: {integrity: sha512-28u1w2LlIfvyvJvYe6pmCipesk8oL5AFMVp+P/U445LcaPgzrU5lNDtAPd6nJvWmoCNyXZz37R/xKOGokccjsw==}
+    engines: {node: '>= 12.17.0'}
+    hasBin: true
 
 snapshots:
 
@@ -2802,6 +2810,10 @@ snapshots:
       '@tauri-apps/api': 2.6.0
 
   '@tauri-apps/plugin-opener@2.4.0':
+    dependencies:
+      '@tauri-apps/api': 2.6.0
+
+  '@tauri-apps/plugin-shell@2.3.0':
     dependencies:
       '@tauri-apps/api': 2.6.0
 
@@ -4385,10 +4397,6 @@ snapshots:
       mkdirp: 3.0.1
       yallist: 5.0.0
 
-  tauri-plugin-python-api@0.3.4:
-    dependencies:
-      '@tauri-apps/api': 2.6.0
-
   tinyexec@1.0.1: {}
 
   tinyglobby@0.2.14:
@@ -4527,3 +4535,5 @@ snapshots:
   yocto-queue@0.1.0: {}
 
   zwitch@2.0.4: {}
+
+  zx@8.7.1: {}

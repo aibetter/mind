@@ -2,6 +2,7 @@
 import { fetch } from '@tauri-apps/plugin-http'
 import { computed, ref, shallowRef } from 'vue'
 import { useStorage } from '@/composables/useStorage'
+import { BACKEND_URL } from '@/utils/const'
 
 interface RemoteModel {
   id: string
@@ -12,7 +13,7 @@ interface RemoteModel {
 
 const remoteModels = shallowRef<RemoteModel[]>([])
 const remoteModelsLoading = ref(true)
-fetch('https://openrouter.ai/api/v1/models?max_price=0')
+fetch(`${BACKEND_URL}/api/v1/open-router/models`)
   .then(res => res.json())
   .then((data) => {
     remoteModels.value = data.data

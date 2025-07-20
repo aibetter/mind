@@ -8,13 +8,43 @@
   "permissions": [
     "core:default",
     "opener:default",
-    "python:default",
     {
       "identifier": "http:default",
       "allow": [
-        "https://openrouter.ai/api/v1/models"
+        "https://openrouter.ai/api/v1/models",
+        "http://localhost:6399"
       ]
     },
-    "store:default"
+    "store:default",
+    "shell:default",
+    {
+      "identifier": "shell:allow-execute",
+      "allow": [
+        {
+          "name": "binaries/server",
+          "sidecar": true
+        },
+        {
+          "name": "cmd",
+          "cmd": "cmd",
+          "args": ["/C", { "validator": "\\S+" }]
+        },
+        {
+          "name": "taskkill",
+          "cmd": "taskkill",
+          "args": ["/F", "/PID", { "validator": "\\d+" }]
+        },
+        {
+          "name": "lsof",
+          "cmd": "lsof",
+          "args": ["-t", { "validator": "-i:\\d+" }]
+        },
+        {
+          "name": "kill",
+          "cmd": "kill",
+          "args": ["-9", { "validator": "\\d+" }]
+        }
+      ]
+    }
   ]
 }

@@ -3,5 +3,5 @@ import antfu from '@antfu/eslint-config'
 export default antfu({
   formatters: true,
   vue: true,
-  ignores: ['src-tauri/**/*.rs', 'src-tauri/**/*.py'],
+  ignores: ['src-tauri/**/*.rs', 'src-backend/**/*.py'],
 })
