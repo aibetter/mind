@@ -11,6 +11,10 @@ interface RemoteModel {
   context_length: number
 }
 
+defineOptions({
+  name: 'ViewModels',
+})
+
 const remoteModels = shallowRef<RemoteModel[]>([])
 const remoteModelsLoading = ref(true)
 fetch(`${AI_BETTER_API_URL}/api/v1/open-router/models?free_only=true`)
