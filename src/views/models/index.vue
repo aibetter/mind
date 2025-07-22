@@ -2,7 +2,7 @@
 import { fetch } from '@tauri-apps/plugin-http'
 import { computed, ref, shallowRef } from 'vue'
 import { useStorage } from '@/composables/useStorage'
-import { BACKEND_URL } from '@/utils/const'
+import { AI_BETTER_API_URL } from '@/utils/const'
 
 interface RemoteModel {
   id: string
@@ -13,10 +13,13 @@ interface RemoteModel {
 
 const remoteModels = shallowRef<RemoteModel[]>([])
 const remoteModelsLoading = ref(true)
-fetch(`${BACKEND_URL}/api/v1/open-router/models`)
+fetch(`${AI_BETTER_API_URL}/api/v1/open-router/models?free_only=true`)
   .then(res => res.json())
   .then((data) => {
-    remoteModels.value = data.data
+    remoteModels.value = data.models
+  })
+  .catch((err) => {
+    console.error(err)
   })
   .finally(() => {
     remoteModelsLoading.value = false

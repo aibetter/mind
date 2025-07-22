@@ -11,8 +11,9 @@
     {
       "identifier": "http:default",
       "allow": [
-        "https://openrouter.ai/api/v1/models",
-        "http://localhost:6399"
+        "http://localhost:6399",
+        "https://openrouter.ai",
+        "https://aibetter-api.vercel.app"
       ]
     },
     "store:default",
