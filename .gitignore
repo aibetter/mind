@@ -33,3 +33,6 @@ src-tauri/binaries
 src-backend/**/__pycache__
 *.spec
 build
+
+# ai
+.cursor
